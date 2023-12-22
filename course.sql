@@ -157,6 +157,17 @@ UPDATE course
 SET course_fees = credit_hours * 300
 WHERE course_id > 0;
 -- ---------------------------
+UPDATE course AS s
+JOIN major AS f ON s.majorID = f.majorID
+SET s.majorName = f.majorName
+WHERE course_id > 0;
+-- ---------------------------
+UPDATE course AS s
+JOIN faculty AS f ON s.fac_id = f.fac_id
+SET s.fac_name = f.fac_name
+WHERE course_id > 999;
+
+
 delete from course where course_id > 0; 
 
 drop table course;
