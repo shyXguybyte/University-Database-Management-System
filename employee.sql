@@ -5,7 +5,7 @@ CREATE TABLE employee(
     name VARCHAR(100),
     gender CHARACTER(1),
     nationality VARCHAR(50) DEFAULT "Egypt",
-    enroll_id INT unique,
+   
     hire_date date,
 	emp_tenure INT,
     email VARCHAR(100),
@@ -16,7 +16,7 @@ CREATE TABLE employee(
     salary FLOAT,
     manager_id INT,
 	-- manager_name VARCHAR(50),
-	   foreign key(enroll_id) references enrollment(enroll_id),
+	 
        FOREIGN KEY(dep_id) REFERENCES department(dep_id),
        FOREIGN KEY(dep_name) REFERENCES department(dep_name),
        FOREIGN KEY(manager_id) REFERENCES employee(emp_id)   
